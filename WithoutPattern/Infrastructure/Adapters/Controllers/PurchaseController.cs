@@ -43,7 +43,7 @@ namespace WithoutPattern.Infrastructure.Adapters.Controllers
                     break;
 
                 case PaymentMethod.PayPal:
-                    if (string.IsNullOrEmpty("4")) return BadRequest(new { Message = "Falta la paypal de destino." });
+                    if (string.IsNullOrEmpty(request.Amount.ToString())) return BadRequest(new { Message = "Falta la paypal de destino." });
 
                     Console.WriteLine($"[Paypal] Generando QR para la wallet 48D665455D");
                     Console.WriteLine("[Paypal] Transacción detectada.");
