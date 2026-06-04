@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WithoutPattern.Application.Dtos;
-using WithoutPattern.Application.UseCases;
 using WithoutPattern.Domain.Enum;
 
 namespace WithoutPattern.Infrastructure.Adapters.Controllers
@@ -10,14 +8,6 @@ namespace WithoutPattern.Infrastructure.Adapters.Controllers
     [Route("api/[controller]")]
     public class PurchaseController : Controller
     {
-        private readonly ProcessOrderUseCase _processOrderUseCase;
-
-        public PurchaseController(ProcessOrderUseCase processOrderUseCase)
-        {
-            _processOrderUseCase = processOrderUseCase;
-        }
-
-
         [HttpPost("purchase-no")]
         public IActionResult Purchase([FromBody] PurchaseRequest request)
         {
