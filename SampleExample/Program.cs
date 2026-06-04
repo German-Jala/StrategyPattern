@@ -30,6 +30,7 @@ namespace SampleExample
                 1 => new CreditCardStrategy(),
                 2 => new PayPalStrategy(),
                 3 => new GooglePayStrategy(),
+                4=> new CryptoStrategy(),
                 _ => null
             };
 

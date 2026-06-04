@@ -36,5 +36,14 @@ namespace SampleExample
                 Console.WriteLine("[GooglePay API] ¡Pago verificado correctamente!");
             }
         }
+
+        public class CryptoStrategy : IPaymentStrategy
+        {
+            public void Process(decimal amount)
+            {
+                Console.WriteLine($"\n[Crypto API] Redirigiendo al usuario para procesar ${amount}...");
+                Console.WriteLine("[Crypto API] ¡Pago verificado correctamente!");
+            }
+        }
     }
 }

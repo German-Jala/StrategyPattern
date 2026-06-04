@@ -1,5 +1,4 @@
 
-using WithoutPattern.Application.UseCases;
 using System.Text.Json.Serialization;
 
 namespace WithoutPattern
@@ -10,7 +9,6 @@ namespace WithoutPattern
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddOpenApi();
-            builder.Services.AddScoped<ProcessOrderUseCase>();
             builder.Services.AddControllers()
                 .AddJsonOptions(options =>
                 {
